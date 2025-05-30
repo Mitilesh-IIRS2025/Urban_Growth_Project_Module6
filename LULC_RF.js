@@ -58,21 +58,10 @@ var savi = image.expression(
     'L': 0.5
 }).rename('SAVI');
 
-var osavi = image.expression(
-  '((NIR - RED) / (NIR + RED + 0.16)) * 1.16', {
-    'NIR': image.select('SR_B5'),
-    'RED': image.select('SR_B4')
-}).rename('OSAVI');
 
-var evi = image.expression(
-  '2.5 * ((NIR - RED) / (NIR + 6 * RED - 7.5 * BLUE + 1))', {
-    'NIR': image.select('SR_B5'),
-    'RED': image.select('SR_B4'),
-    'BLUE': image.select('SR_B2')
-}).rename('EVI');
 
 // Add all bands and indices to final image
-image = image.addBands([ndvi, ndwi, ndbi, savi, osavi, evi]);
+image = image.addBands([ndvi, ndwi, ndbi, savi]);
 
 // NDVI Visualization
 Map.addLayer(ndvi, {min: -1, max: 1, palette: ['blue', 'white', 'green']}, 'NDVI');
@@ -93,7 +82,7 @@ var trainingSamples = Builtup.merge(Water).merge(Forest).merge(Agriculture).merg
   });
 
 // Define input bands
-var bands = ['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'NDVI', 'NDWI', 'NDBI', 'SAVI', 'OSAVI', 'EVI'];
+var bands = ['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'NDVI', 'NDWI', 'NDBI', 'SAVI'];
 
 // Sample the image at training points
 var training = image.select(bands).sampleRegions({
