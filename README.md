@@ -1,7 +1,9 @@
 # Urban_Growth_Project_Module6
 
 Decadal Urban Growth Analysis of Bengaluru City
-This repository contains the analysis of urban expansion and land surface temperature (LST) changes in Bengaluru (Bangalore) City, India, over the past two decades (2004, 2014, 2024) using Google Earth Engine (GEE), machine learning classifiers, and Power BI visualizations.
+This repository contains the analysis of urban expansion and land surface temperature (LST) changes in Bengaluru (Bangalore) City, India, over the past two decades (2004, 2014, 2024) using Google Earth Engine (GEE), machine learning classifiers, and Power BI visualizations. 
+The analysis of Land Use Land Cover (LULC) and Land Surface Temperature (LST) was conducted using Google Earth Engine (GEE) scripts. For supervised LULC classification using the Random Forest algorithm, GEE codes were implemented for the years 2004 ((https://code.earthengine.google.com/e9b83853cbff970b52d33727b46228a0)), 2014 (https://code.earthengine.google.com/e9b83853cbff970b52d33727b46228a0), and 2024 (https://code.earthengine.google.com/f75ffc9006ddc4f7da54717756311158), including area calculations for each class. For unsupervised classification, the K-means clustering method was used through a separate GEE script (https://code.earthengine.google.com/9270130a5429c082e23230169a813d46). To extract Land Surface Temperature (LST), specific codes were used for 2004 (https://code.earthengine.google.com/857ae097637f82234e011348682ce800), 2014 (https://code.earthengine.google.com/857ae097637f82234e011348682ce800), and 2024 (https://code.earthengine.google.com/f1529a27e6dcdf844a1c22a1b51c4313). The relevant data asset for the Bengaluru study area was accessed through this GEE link: asset (https://code.earthengine.google.com/?asset=projects/ee-swarna221102/assets/bengaluru).
+
 Urbanization, especially in developing countries, drives profound changes in land use/land cover (LULC) and contributes to the urban heat island effect. This project leverages satellite data and cloud-based geospatial analytics to examine Bengaluru’s transformation over the last 20 years.
 Key highlights:
 
@@ -16,9 +18,9 @@ Objectives
 
 •	Perform decadal LULC classification using:
 
-      o	Supervised machine learning (Random Forest)
+o	Supervised machine learning (Random Forest)
 
-      o	Unsupervised clustering (K-Means)
+o	Unsupervised clustering (K-Means)
 
 •	Analyze land surface temperature (LST) variations
 
@@ -38,9 +40,9 @@ The project utilized multi-temporal satellite datasets to analyze urban growth a
 
 •	Classification:
 
-     o	Random Forest with training data (~70% training, 30% validation, 100 trees)
+o	Random Forest with training data (~70% training, 30% validation, 100 trees)
      
-     o	K-Means clustering with post-classification labeling
+o	K-Means clustering with post-classification labeling
      
 •	Visualization: Power BI dashboard
 
